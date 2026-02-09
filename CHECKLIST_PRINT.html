@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checklist Anti-Marrones Freelance 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .checklist-container {
+            width: 800px;
+            background: white;
+            padding: 60px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #6C63FF;
+            font-size: 42px;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 10px;
+            width: 100%;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #10b981;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #94a3b8;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            border-left: 6px solid #cbd5e1;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .check-item:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Checked State */
+        .check-item.checked {
+            background: #ecfdf5;
+            border-left-color: #10b981;
+        }
+
+        .check-item.checked .check-box {
+            background: #10b981;
+            border-color: #10b981;
+        }
+
+        .check-item.checked .check-box::after {
+            content: '✓';
+            color: white;
+            font-size: 16px;
+            display: block;
+            text-align: center;
+            line-height: 22px;
+        }
+
+        .check-box {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #94a3b8;
+            border-radius: 6px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .content h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 12px;
+            color: #cbd5e1;
+        }
+
+        /* Input Row */
+        .input-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .input-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .project-input {
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 18px;
+            padding: 8px 0;
+            font-family: 'Outfit', sans-serif;
+            color: #1e293b;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
+
+        .project-input:focus {
+            border-color: #6C63FF;
+        }
+
+        .project-input::placeholder {
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="checklist-container">
+        <h1>🛡️ Checklist "Anti-Marrones"</h1>
+        <p class="subtitle">Guía de Seguridad Interactiva (Edición 2026)</p>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group">
+                <label class="input-label">Cliente</label>
+                <input type="text" id="clientName" class="project-input" placeholder="Ej. Restaurante Pepe">
+            </div>
+            <div class="input-group">
+                <label class="input-label">Proyecto</label>
+                <input type="text" id="projectName" class="project-input" placeholder="Ej. Web Corporativa">
+            </div>
+        </div>
+
+        <!-- Fase 1 -->
+        <div class="section">
+            <div class="section-title">FASE 1: EL DINERO (ANTES DE EMPEZAR)</div>
+
+            <div class="check-item" onclick="toggleCheck(this)">
+                <div class="check-box"></div>
+                <div class="content">
+                    <h3>¿He cobrado el 50% por adelantado?</h3>
+                    <p>Nunca empieces a trabajar sin ver el dinero en tu cuenta.</p>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this)">
+                <div class="check-box"></div>
+                <div class="content">
+                    <h3>¿Está firmado el Contrato de Servicios?</h3>
+                    <p>Un email no vale. Sin firma, no eres dueño de tu trabajo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fase 2 -->
+        <div class="section">
+            <div class="section-title">FASE 2: EL ALCANCE</div>
+
+            <div class="check-item" onclick="toggleCheck(this)">
+                <div class="check-box"></div>
+                <div class="content">
+                    <h3>¿Tengo todo el contenido del cliente?</h3>
+                    <p>No diseñes con "Lorem Ipsum" o trabajarás doble.</p>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this)">
+                <div class="check-box"></div>
+                <div class="content">
+                    <h3>¿Definidas las revisiones extra?</h3>
+                    <p>Asegúrate de que entiende que la ronda X+1 se factura aparte.</p>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this)">
+                <div class="check-box"></div>
+                <div class="content">
+                    <h3>¿Tengo acceso técnico?</h3>
+                    <p>Claves del hosting, dominio, FTP comprobadas.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fase 3 -->
+        <div class="section">
+            <div class="section-title">FASE 3: EL FINAL FELIZ</div>
+
+            <div class="check-item" onclick="toggleCheck(this)">
+                <div class="check-box"></div>
+                <div class="content">
+                    <h3>¿He cobrado el 50% final ANTES de entregar?</h3>
+                    <p>Sube a tu servidor de pruebas, no al suyo, hasta cobrar.</p>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this)">
+                <div class="check-box"></div>
+                <div class="content">
+                    <h3>¿Permiso para portfolio?</h3>
+                    <p>Asegura que puedes mostrar este trabajo públicamente.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2026 FreelanceCalc Pro - Herramienta Interactiva
+        </div>
+    </div>
+
+    <div class="actions-bar">
+        <button class="btn btn-print" onclick="window.print()">🖨️ Guardar PDF / Imprimir</button>
+        <button class="btn btn-reset" onclick="resetAll()">🗑️ Nuevo Proyecto</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load Checks
+            const items = document.querySelectorAll('.check-item');
+            items.forEach((item, index) => {
+                const isChecked = localStorage.getItem('check_' + index) === 'true';
+                if (isChecked) {
+                    item.classList.add('checked');
+                }
+            });
+
+            // Load Project Info
+            const savedProject = localStorage.getItem('projectName');
+            if (savedProject) document.getElementById('projectName').value = savedProject;
+
+            const savedClient = localStorage.getItem('clientName');
+            if (savedClient) document.getElementById('clientName').value = savedClient;
+
+            updateProgress();
+
+            // Save Inputs on Type
+            document.getElementById('projectName').addEventListener('input', (e) => localStorage.setItem('projectName', e.target.value));
+            document.getElementById('clientName').addEventListener('input', (e) => localStorage.setItem('clientName', e.target.value));
+        });
+
+        function toggleCheck(element) {
+            element.classList.toggle('checked');
+            saveState();
+            updateProgress();
+        }
+
+        function saveState() {
+            const items = document.querySelectorAll('.check-item');
+            items.forEach((item, index) => {
+                localStorage.setItem('check_' + index, item.classList.contains('checked'));
+            });
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.check-item').length;
+            const checked = document.querySelectorAll('.check-item.checked').length;
+            const percentage = (checked / total) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+        }
+
+        function resetAll() {
+            if (confirm('¿Seguro que quieres borrar todo para empezar un nuevo proyecto?')) {
+                localStorage.clear();
+                document.querySelectorAll('.check-item').forEach(item => item.classList.remove('checked'));
+                document.getElementById('projectName').value = '';
+                document.getElementById('clientName').value = '';
+                updateProgress();
+            }
+        }
+    </script>
+</body>
+
+</html>
