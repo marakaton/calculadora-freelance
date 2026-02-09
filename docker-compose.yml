@@ -3,9 +3,10 @@ version: '3'
 services:
   # 1. Contenedor que descarga el código (init container)
   git-puller:
-    image: alpine/git
+    image: alpine:latest
     container_name: git_puller
-    command: clone https://github.com/marakaton/calculadora-freelance.git / data
+    # Instala Git y CA-Certificates, limpia la carpeta (incluyendo .git oculto) y clona de nuevo
+    command: /bin/sh -c "apk add --no-cache git ca-certificates && (rm -rf /data/.git /data/* || true) && git clone https://github.com/marakaton/calculadora-freelance.git /data && rm -rf /data/.git"
     volumes:
       - web-content:/data
 
