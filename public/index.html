@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Freelance: ¿Cuánto Cobrar por tu Proyecto Web o Logo?</title>
+    <meta name="description"
+        content="Descubre cuánto cobrar por tus servicios freelance con nuestra calculadora gratuita. Genera presupuestos profesionales en PDF para diseño web, desarrollo y logos.">
+    <meta name="keywords"
+        content="calculadora freelance, cuanto cobrar, tarifas diseño web, precio logo, presupuesto freelance, generador de presupuestos">
+    <meta name="author" content="Tu Nombre">
+
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Calculadora Freelance Definitiva">
+    <meta property="og:description" content="Calcula tu tarifa ideal y genera un presupuesto profesional en segundos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/">
+    <meta property="og:image" content="https://tudominio.com/og-image.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Calculadora Freelance Pro",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Herramienta gratuita para calcular tarifas freelance y generar presupuestos en PDF."
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    <div class="bg-blur"></div>
+
+    <header>
+        <nav>
+            <div class="logo">Freelance<span>Calc</span></div>
+            <ul>
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#blog">Consejos</a></li>
+                <li><a href="#" id="demoBtn" class="btn-primary">Ver Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Deja de perder dinero en tus presupuestos.</h1>
+            <p>Calcula el precio justo por tu trabajo y genera un PDF profesional en segundos. Sin registros, 100%
+                gratis.</p>
+            <a href="#calculadora" class="btn-cta">Empezar Ahora</a>
+        </section>
+
+        <section id="calculadora" class="calculator-container">
+            <div class="glass-card">
+                <h2>1. Configura tu Proyecto</h2>
+
+                <form id="calcForm">
+                    <div class="input-group">
+                        <label for="projectType">Tipo de Proyecto</label>
+                        <select id="projectType" name="projectType">
+                            <option value="web_landing">Landing Page (Simple)</option>
+                            <option value="web_corporate">Web Corporativa (5-10 págs)</option>
+                            <option value="ecommerce">Tienda Online (E-commerce)</option>
+                            <option value="logo">Diseño de Logo / Branding</option>
+                            <option value="app_mvp">App Móvil (MVP)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="experience">Tu Nivel de Experiencia</label>
+                        <select id="experience" name="experience">
+                            <option value="junior">Junior (Empezando)</option>
+                            <option value="mid">Medio (3-5 años)</option>
+                            <option value="senior">Senior (+5 años)</option>
+                            <option value="expert">Estudio / Agencia</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="urgency">Plazo de Entrega</label>
+                        <select id="urgency" name="urgency">
+                            <option value="normal">Estándar (Normal)</option>
+                            <option value="rush">Urgente (+25%)</option>
+                            <option value="relaxed">Relajado (-10%)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group checkbox-group">
+                        <label class="container-checkbox">Incluir Mantenimiento (Mensual)
+                            <input type="checkbox" id="maintenance">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <button type="button" id="calculateBtn" class="btn-calc">Calcular Precio Justo</button>
+                </form>
+            </div>
+
+            <div id="resultCard" class="glass-card result-hidden">
+                <h2>Resultado Estimado</h2>
+                <div class="price-display">
+                    <span class="currency">€</span><span id="finalPrice">0</span>
+                    <span class="range-text">Base imponible recomendada: <span id="priceRange">0€ - 0€</span></span>
+                </div>
+
+                <div class="breakdown">
+                    <p>Mantenimiento mensual: <span id="maintPrice">0€</span>/mes</p>
+                    <p class="note">*Precio sin IVA. Recuerda añadir el 21% en tu factura.</p>
+                </div>
+
+                <div class="actions">
+                    <button id="downloadPdfBtn" class="btn-secondary">📄 Descargar Presupuesto PDF</button>
+                    <button id="copyLinkBtn" class="btn-outline">🔗 Compartir</button>
+                </div>
+
+                <!-- Monetization Grid -->
+                <div class="monetization-grid">
+                    <!-- Hook 1: Legal / Contracts (Fear based) -->
+                    <div class="ad-box legal-box">
+                        <span class="ad-icon">⚖️</span>
+                        <p><strong>Contrato Anti-Impagos (Ley Española)</strong></p>
+                        <p class="ad-sub">Descarga el modelo oficial de prestación de servicios para evitar problemas.
+                        </p>
+                        <a href="https://www.rocketlawyer.com/es/es" target="_blank" rel="noopener noreferrer"
+                            class="ad-link">Descargar Modelo Legal &rarr;</a>
+                    </div>
+
+                    <!-- Hook 2: Payments / Banking (Greed/Saving based) -->
+                    <div class="ad-box fin-box">
+                        <span class="ad-icon">🏦</span>
+                        <p><strong>Cuenta Business Sin Comisiones</strong></p>
+                        <p class="ad-sub">IBAN Español gratis. Separa tus gastos de autónomo con Qonto.</p>
+                        <a href="https://qonto.com/es" target="_blank" rel="noopener noreferrer" class="ad-link">Abrir
+                            Cuenta Gratis &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Premium Upsell -->
+                <div class="premium-upsell">
+                    <p>🔥 <strong>Pack Autónomo Pro (9€):</strong> Modelo de Factura (IRPF/IVA) + Contrato + Email de
+                        Reclamación de deuda.</p>
+                    <button class="btn-upsell" onclick="window.open('https://gumroad.com', '_blank')">Comprar Pack
+                        Ahora</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="content-section" style="scroll-margin-top: 100px;">
+            <h3>Consejos y Preguntas Frecuentes</h3>
+            <div class="faq-item">
+                <h4>¿Cómo se calcula el precio de una página web?</h4>
+                <p>El precio depende de la complejidad, el número de páginas y las funcionalidades específicas como
+                    e-commerce o integraciones. Nuestra calculadora usa tarifas de mercado actualizadas.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Debo cobrar por hora o por proyecto?</h4>
+                <p>Para proyectos definidos como webs o logos, recomendamos precio fijo. Para mantenimiento o
+                    consultoría, precio por hora.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Cómo evito que el cliente no me pague?</h4>
+                <p>Siempre pide un 50% por adelantado y usa un contrato simple. Es la única forma de proteger tu tiempo.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 FreelanceCalc. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
