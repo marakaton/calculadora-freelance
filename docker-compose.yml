@@ -5,22 +5,51 @@ services:
   git-puller:
     image: alpine:latest
     container_name: git_puller
-    # CORREGIDO: Clona en carpeta temporal y mueve el contenido a /data (root)
-    command: /bin/sh -c "apk add --no-cache git && rm -rf /data/* && git clone https://github.com/marakaton/calculadora-freelance.git /temp_repo && mv /temp_repo/* /data/ && rm -rf /temp_repo"
+    # Script para clonar y mover archivos a /data
+    command: /bin/sh -c "apk add --no-cache git ca-certificates && (rm -rf /data/.git /data/* || true) && git clone https://github.com/marakaton/calculadora-freelance.git /temp_repo && mv /temp_repo/* /data/ && rm -rf /temp_repo"
     volumes:
       - web-content:/data
+    networks:
+      - bridge
 
   # 2. Servidor web que lee el código descargado
   web:
     image: nginx:alpine
     container_name: freelance_calculator
     restart: always
-    ports:
-      - "53000:80"
+    # Eliminamos puertos expuestos para usar SOLO Caddy
+    # ports:
+    #  - "53000:80"
+    expose:
+      - "80"
     volumes:
       - web-content:/usr/share/nginx/html
     depends_on:
       - git-puller
 
+    # Configuración de Red igual que Nobella
+    networks:
+      - network_general_internal
+      - bridge
+
+    # Configuración de Caddy (Copiada de Nobella)
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        caddy: freelancecalc.net, www.freelancecalc.net
+        caddy.reverse_proxy: "{{upstreams 80}}"
+        caddy.reverse_proxy.header_up_1: "Host {host}"
+        caddy.reverse_proxy.header_up_2: "X-Forwarded-Proto {scheme}"
+        caddy.reverse_proxy.header_up_3: "X-Forwarded-Host {host}"
+        caddy.reverse_proxy.trusted_proxies: "private_ranges"
+
 volumes:
   web-content:
+
+
+networks:
+  network_general_internal:
+    external: true
+  bridge:
+    external: true
