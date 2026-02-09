@@ -2,9 +2,10 @@ version: '3'
 
 services:
   web:
-    build: .
-    image: freelance-calculator:latest
+    image: httpd:alpine
     container_name: freelance_calculator
     restart: unless-stopped
     ports:
-      - "53000:80" # Puerto personalizado para tu servidor
+      - "53000:80"
+    command: >
+      /bin/sh -c "apk add --no-cache git && rm -rf /usr/local/apache2/htdocs/* && git clone https://github.com/marakaton/calculadora-freelance.git /usr/local/apache2/htdocs/ && httpd-foreground"
