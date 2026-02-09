@@ -1,11 +1,25 @@
 version: '3'
 
 services:
+  # 1. Contenedor que descarga el código (init container)
+  git-puller:
+    image: alpine/git
+    container_name: git_puller
+    command: clone https://github.com/marakaton/calculadora-freelance.git / data
+    volumes:
+      - web-content:/data
+
+  # 2. Servidor web que lee el código descargado
   web:
-    image: httpd:alpine
+    image: nginx:alpine
     container_name: freelance_calculator
-    restart: unless-stopped
+    restart: always
     ports:
       - "53000:80"
-    command: >
-      /bin/sh -c "apk add --no-cache git && rm -rf /usr/local/apache2/htdocs/* && git clone https://github.com/marakaton/calculadora-freelance.git /usr/local/apache2/htdocs/ && httpd-foreground"
+    volumes:
+      - web-content:/usr/share/nginx/html
+    depends_on:
+      - git-puller
+
+volumes:
+  web-content:
