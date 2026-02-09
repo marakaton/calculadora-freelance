@@ -7,5 +7,3 @@ services:
     restart: unless-stopped
     ports:
       - "53000:80" # Puerto personalizado para tu servidor
-    volumes:
-      - ./:/usr/share/nginx/html # Monta la carpeta actual como web root
