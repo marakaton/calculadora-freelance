@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Calculator Body -->
+  <rect x="8" y="4" width="48" height="56" rx="6" fill="#10B981"/>
+  <!-- Screen -->
+  <rect x="14" y="10" width="36" height="14" rx="2" fill="#FFFFFF"/>
+  <!-- Euro Symbol on Screen (Simplified) -->
+  <path d="M28 17 C26 17 25 18 25 19 S26 21 28 21 M24 19 H30 M24 21 H30" stroke="#10B981" stroke-width="2" fill="none"/>
+  <!-- Buttons -->
+  <rect x="14" y="30" width="8" height="8" rx="2" fill="#FFFFFF" fill-opacity="0.9"/>
+  <rect x="28" y="30" width="8" height="8" rx="2" fill="#FFFFFF" fill-opacity="0.9"/>
+  <rect x="42" y="30" width="8" height="8" rx="2" fill="#FFFFFF" fill-opacity="0.9"/>
+  
+  <rect x="14" y="42" width="8" height="8" rx="2" fill="#FFFFFF" fill-opacity="0.9"/>
+  <rect x="28" y="42" width="8" height="8" rx="2" fill="#FFFFFF" fill-opacity="0.9"/>
+  <rect x="42" y="42" width="8" height="8" rx="2" fill="#FFFFFF" fill-opacity="0.9"/>
+</svg>

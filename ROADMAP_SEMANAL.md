@@ -1,54 +1,47 @@
-# 🚀 Roadmap: Calculadora Freelance (Semana 1)
-**Objetivo:** Pasar de un prototipo local a un negocio online generando tráfico e ingresos.
-**Tiempo diario:** 45 - 60 minutos.
+# 🚀 Roadmap Acelerado: Calculadora Freelance (Semana 1)
+**Estado:** ¡Vamos muy por delante del plan original! En 2 días hemos montado infraestructura, producto y ventas.
 
 ---
 
-## 📅 Lunes: Infraestructura de Dinero (Afiliación)
-*Objetivo: Obtener los enlaces que te pagarán.*
-1.  **Legal:** Regístrate en el programa de afiliados de **RocketLawyer** o **Wonder.Legal** (busca "RocketLawyer affiliate program España" en Google).
-2.  **Banca:** Regístrate en el programa de **Qonto** o **Revolut Business** (suelen tener programas de "Invita a un amigo" o afiliados directos).
-3.  **Producto Propio:** Crea una cuenta gratuita en **Gumroad** (para vender tu futuro Pack Premium).
-4.  **Acción:** Guarda esos enlaces en un bloc de notas para usarlos el Jueves.
+## ✅ Domingo: Cimientos y Afiliación (COMPLETADO)
+*Objetivo: Prototipo funcional y modelo de negocio base.*
+- [x] **Prototipo:** Web funcional con HTML/JS/CSS.
+- [x] **Afiliados:** Integrados enlaces de **RocketLawyer** y **Qonto** (pendiente aprobación).
+- [x] **Localización:** Adaptado todo a España (IVA, IRPF, Euros).
 
-## 📅 Martes: Publicación Online (Despliegue)
-*Objetivo: Que el mundo pueda ver tu web.*
-1.  Crea una cuenta en **GitHub.com** (si no tienes).
-2.  Sube esta carpeta `freelance_calculator` como un repositorio nuevo.
-3.  Activa **GitHub Pages** en la configuración del repositorio.
-4.  **Acción:** Comprueba que tu web es accesible desde `tusuario.github.io/freelance_calculator`.
-
-## 📅 Miércoles: SEO y Contenido (Atraer Google)
-*Objetivo: Que te encuentren cuando busquen "cuánto cobrar web".*
-1.  **Ampliar FAQ:** Escribe 3 preguntas más en el `index.html` con palabras clave estratégicas:
-    *   *"¿Cuándo es obligatorio hacerse autónomo en España?"*
-    *   *"¿Cuánto IRPF debo poner en mi factura?"*
-    *   *"Diferencia entre Base Imponible y Total."*
-2.  **Metaetiquetas:** Revisa que el `<title>` y `<description>` sean muy atractivos.
-
-## 📅 Jueves: Creación del Producto (El Upsell)
-*Objetivo: Tener algo propio que vender por 9€.*
-1.  Busca en internet * "Plantilla factura autónomo Word"* y * "Contrato prestación servicios genérico"*.
-2.  Descárgalas, ponles un diseño limpio y guárdalas en un ZIP llamado `Pack_Autonomo_Pro.zip`.
-3.  Sube ese ZIP a **Gumroad** como producto digital (precio: 9€).
-4.  **Acción:** Pega tu enlace de venta de Gumroad en el botón de tu web.
-
-## 📅 Viernes: Vitamina Visual y Redes
-*Objetivo: Que la gente quiera compartirlo.*
-1.  **Imagen Social:** Crea una imagen bonita (1200x630px) que diga "Calculadora de Tarifas 2026" para cuando se comparta en WhatsApp/Twitter.
-2.  **Botón Compartir:** Arregla el botón de "Compartir" de la web para que abra directamente un tweet con: *"He calculado mi tarifa ideal con esta herramienta gratuita: [TU URL] #freelance #españa"*.
-
-## 📅 Sábado: "Seed" (Tráfico Inicial)
-*Objetivo: Conseguir los primeros 100 usuarios.*
-1.  Publica el enlace en **LinkedIn** (con un texto profesional sobre lo difícil que es poner precios).
-2.  Publica en **Twitter/X** (usando hashtags #autonomos #diseñoweb).
-3.  (Opcional) Publica en algún foro como **Forocoches** (sección empleo) o **Menéame**, presentándolo como "He hecho esto gratis para ayudar".
-
-## 📅 Domingo: Análisis y Relax
-*Objetivo: Ver qué ha pasado.*
-1.  Regístrate en **Google Search Console** y añade tu web.
-2.  Mira si has tenido clics en los enlaces de afiliados (la mayoría de paneles te lo muestran).
-3.  **Planifica la Semana 2:** ¿Añadir calculadora de IRPF? ¿Blog?
+## ✅ Lunes: Infraestructura PRO y Producto (COMPLETADO)
+*Objetivo: Negocio 100% operativo y propiedad total.*
+- [x] **Servidor Propio:** Despliegue en Portainer con Docker (Nginx + Git automático).
+- [x] **Dominio:** Compra y configuración de `freelancecalc.net` con HTTPS (Caddy).
+- [x] **Producto Digital:** Creación del "Pack Freelance Pro" (Contratos + Excel + Checklist).
+- [x] **Tienda:** Configuración de **Ko-fi** y **Stripe** para cobrar sin comisiones.
+- [x] **Checklist Interactiva:** Herramienta "lead magnet" para atraer usuarios.
 
 ---
-*💡 Consejo:* No intentes hacerlo perfecto. Es mejor tener una web "fea" online que una perfecta en tu ordenador.
+
+## 📅 Martes: SEO y Lanzamiento "Soft"
+*Objetivo: Que Google nos vea y la web luzca perfecta al compartir.*
+1.  **Google Search Console:** Dar de alta el dominio para indexación inmediata (`site:freelancecalc.net`).
+2.  **Social Cards (OpenGraph):** Crear la imagen que sale se comparte el enlace en WhatsApp/Twitter (ahora sale gris/vacía).
+3.  **Primer "Tweet" de prueba:** Compartirlo con un círculo cerrado para validar que todo carga bien en móviles ajenos.
+
+## 📅 Miércoles: Difusión Masiva (El "Show")
+*Objetivo: Conseguir las primeras 1000 visitas.*
+1.  **Hilo de Twitter/X:** "Cómo monté un SaaS por 15€ en un fin de semana" (contando la historia, suele viralizar).
+2.  **LinkedIn:** Post profesional sobre "La dificultad de poner precios siendo freelance" -> Solución: Tu calculadora.
+3.  **Comunidades:** Publicar en *IndieHackers*, *Menéame* o foros de emprendedores (sin spam, aportando valor).
+
+## 📅 Jueves: Optimización de Conversión
+*Objetivo: Conseguir la primera venta del Pack (9€).*
+1.  **Heatmaps:** (Opcional) Instalar Microsoft Clarity (gratis) para ver dónde hacen clic los usuarios.
+2.  **Copywriting:** Revisar si los textos de venta del pack ("Compra ahora") son convincentes.
+3.  **Email:** Si alguien compra, enviarle un email manual de agradecimiento pidiendo feedback.
+
+## 📅 Viernes: Análisis y Siguientes Pasos
+*Objetivo: Planificar la Semana 2.*
+1.  **Revisar Afiliados:** ¿Han aceptado las solicitudes de Qonto/RocketLawyer?
+2.  **Analytics:** ¿Cuánta gente ha venido? ¿De dónde?
+3.  **Mejoras:** ¿Añadimos calculadora de IRPF trimestral? ¿Modo oscuro?
+
+---
+*💡 Nota:* Has comprimido el trabajo de 2 semanas en 48 horas. ¡Ritmo brutal!
