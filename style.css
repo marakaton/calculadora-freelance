@@ -385,6 +385,16 @@ select:focus {
     color: var(--success);
 }
 
+.tech-box {
+    background: rgba(108, 99, 255, 0.1);
+    /* Subtle Primary Purple */
+    border-color: rgba(108, 99, 255, 0.3);
+}
+
+.tech-box .ad-link {
+    color: #a5b4fc;
+}
+
 /* Premium Upsell */
 .premium-upsell {
     margin-top: 1.5rem;

@@ -5,8 +5,19 @@ services:
   git-puller:
     image: alpine:latest
     container_name: git_puller
-    # Script para clonar y mover archivos a /data
-    command: /bin/sh -c "apk add --no-cache git ca-certificates && (rm -rf /data/.git /data/* || true) && git clone https://github.com/marakaton/calculadora-freelance.git /temp_repo && mv /temp_repo/* /data/ && rm -rf /temp_repo"
+    restart: always
+    # Script inteligente: Bucle infinito que actualiza cada 60s sin borrar todo
+    command: >
+      /bin/sh -c "apk add --no-cache git ca-certificates && while true; do
+        if [ -d /data/.git ]; then
+          echo 'Repo detectado. Buscando actualizaciones...' && cd /data && git pull;
+        else
+          echo 'Carpeta vacia o corrupta. Clonando desde cero...' && 
+          rm -rf /data/* /data/.* 2>/dev/null || true && 
+          git clone https://github.com/marakaton/calculadora-freelance.git /data;
+        fi;
+        echo 'Todo actualizado. Durmiendo 60 segundos...' && sleep 60;
+      done"
     volumes:
       - web-content:/data
     networks:
