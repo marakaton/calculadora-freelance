@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Rate Calculator: How Much to Charge for a Website?</title>
+    <meta name="description"
+        content="Stop undercharging. Calculate your ideal freelance rate for web design, development, and logos. Generate professional PDF estimates instantly.">
+    <meta name="keywords"
+        content="freelance calculator, rate calculator, web design pricing, how much to charge for a website, logo design cost, freelance estimate">
+    <meta name="author" content="FreelanceCalc">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Ultimate Freelance Rate Calculator">
+    <meta property="og:description"
+        content="Calculate your perfect rate and generate a professional quote in seconds. Stop guessing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freelancecalc.net/en/">
+    <link rel="canonical" href="https://freelancecalc.net/en/">
+    <meta property="og:image" content="https://freelancecalc.net/favicon.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles (Reusing main styles) -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Freelance Rate Calculator",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free tool to calculate freelance rates and generate PDF estimates."
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    <div class="bg-blur"></div>
+
+    <header>
+        <nav>
+            <div class="logo">Freelance<span>Calc</span></div>
+            <ul>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#tips">Tips</a></li>
+                <!-- Language Switcher -->
+                <li><a href="/" style="opacity: 0.7; font-size: 0.9em;">🇪🇸 ES</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Stop losing money on your quotes.</h1>
+            <p>Calculate the fair price for your work and generate a professional PDF estimate in seconds. No signup,
+                100% free.</p>
+            <a href="#calculator" class="btn-cta">Start Calculating</a>
+        </section>
+
+        <section id="calculator" class="calculator-container">
+            <div class="glass-card">
+                <h2>1. Configure Project</h2>
+
+                <form id="calcForm">
+                    <div class="input-group">
+                        <label for="projectType">Project Type</label>
+                        <select id="projectType" name="projectType">
+                            <option value="web_landing">Landing Page (One-pager)</option>
+                            <option value="web_corporate">Corporate Website (5-10 pages)</option>
+                            <option value="ecommerce">E-commerce Store</option>
+                            <option value="logo">Logo Design / Branding</option>
+                            <option value="app_mvp">Mobile App (MVP)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="experience">Your Experience Level</label>
+                        <select id="experience" name="experience">
+                            <option value="junior">Junior (Just starting)</option>
+                            <option value="mid">Mid-Level (3-5 years)</option>
+                            <option value="senior">Senior (+5 years)</option>
+                            <option value="expert">Agency / Expert Studio</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="urgency">Timeline / Urgency</label>
+                        <select id="urgency" name="urgency">
+                            <option value="normal">Standard Timeline</option>
+                            <option value="rush">Rush Job (+50%)</option>
+                            <option value="relaxed">Flexible (-10%)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group checkbox-group">
+                        <label class="container-checkbox">Include Monthly Retainer (Maintenance)
+                            <input type="checkbox" id="maintenance">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <button type="button" id="calculateBtn" class="btn-calc">Calculate Fair Price</button>
+                </form>
+            </div>
+
+            <div id="resultCard" class="glass-card result-hidden">
+                <h2>Estimated Quote</h2>
+                <div class="price-display">
+                    <span class="currency">$</span><span id="finalPrice">0</span>
+                    <span class="range-text">Recommended Range: <span id="priceRange">$0 - $0</span></span>
+                </div>
+
+                <div class="breakdown">
+                    <p>Monthly Retainer: <span id="maintPrice">$0</span>/mo</p>
+                    <p class="note">*Net price. Remember to add applicable taxes.</p>
+                </div>
+
+                <div class="actions">
+                    <button id="downloadPdfBtn" class="btn-secondary">📄 Download PDF Estimate</button>
+                    <!-- <button id="copyLinkBtn" class="btn-outline">🔗 Share Link</button> -->
+                </div>
+
+                <!-- Monetization Grid (US Placeholders) -->
+                <!-- Ideally Bluehost or SiteGround affiliate links here -->
+                <div class="monetization-grid" style="grid-template-columns: 1fr; margin-top: 2rem;">
+                    <!-- Hosting Hook -->
+                    <div class="ad-box tech-box">
+                        <span class="ad-icon">🚀</span>
+                        <p><strong>Professional Hosting (Recommended)</strong></p>
+                        <p class="ad-sub">Fastest WordPress hosting for client sites. 24/7 Support.</p>
+                        <a href="https://www.bluehost.com/" target="_blank" rel="noopener noreferrer"
+                            class="ad-link">View Hosting Deals &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Premium Upsell (Global/Generic) -->
+                <!-- Only show if you have a generic English product, otherwise keep hidden or generic -->
+                <div class="premium-upsell">
+                    <p>🔥 <strong>Freelancer Starter Pack ($9):</strong> Professional Invoice Template + Contract +
+                        Client Checklist.</p>
+                    <button class="btn-upsell" onclick="window.open('https://ko-fi.com/s/48b71c6037', '_blank')">Get the
+                        Pack (Instant Download)</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="content-section" style="scroll-margin-top: 100px;">
+            <h3>Tips & FAQ</h3>
+            <div class="faq-item">
+                <h4>How do I price a website?</h4>
+                <p>Pricing depends on page count, complexity, and custom features like e-commerce. Don't sell yourself
+                    short—tech clients pay for value, not just hours.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Hourly or Fixed Price?</h4>
+                <p>For defined scopes (landing pages, logos), always use <strong>Fixed Price</strong>. For maintenance
+                    or consulting, use an hourly rate.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How to avoid non-payment?</h4>
+                <p>Always ask for a <strong>50% deposit</strong> upfront. Never start working without a signed contract
+                    and a deposit.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 FreelanceCalc. All rights reserved.</p>
+        <div class="footer-links">
+            <div class="footer-links">
+                <a href="../privacidad.html">Privacy</a>
+                <a href="../terminos.html">Terms</a>
+                <a href="mailto:hello@freelancecalc.net">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script_en.js"></script>
+</body>
+
+</html>
