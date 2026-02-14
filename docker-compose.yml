@@ -48,12 +48,12 @@ services:
       mode: replicated
       replicas: 1
       labels:
+        container_port: "80"
         caddy: freelancecalc.net, www.freelancecalc.net
-        caddy.reverse_proxy: "{{upstreams 80}}"
-        caddy.reverse_proxy.header_up_1: "Host {host}"
-        caddy.reverse_proxy.header_up_2: "X-Forwarded-Proto {scheme}"
-        caddy.reverse_proxy.header_up_3: "X-Forwarded-Host {host}"
-        caddy.reverse_proxy.trusted_proxies: "private_ranges"
+        caddy.reverse_proxy: "{{index .Service.Labels \"container_port\"}}"
+        # Esto sobreescribe la configuración global de DNS para este sitio específico
+        # Caddy usará el método estándar (HTTP/TLS)
+        caddy.tls.ca: "https://acme-v02.api.letsencrypt.org/directory"
 
 volumes:
   web-content:
