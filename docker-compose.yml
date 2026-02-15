@@ -53,6 +53,8 @@ services:
         caddy.tls.issuer: "acme"
         caddy.tls.issuer.email: "larraz92@gmail.com"
         caddy.tls.issuer.dir: "https://acme-v02.api.letsencrypt.org/directory"
+        # Forzamos desafio HTTP-01 o TLS-ALPN-01 (puertos 80/443) para evitar DNS-01
+        caddy.tls.issuer.challenges: "http-01 tls-alpn-01"
 
 volumes:
   web-content:
