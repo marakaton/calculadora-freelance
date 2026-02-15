@@ -52,7 +52,7 @@ services:
         caddy.reverse_proxy: "{{upstreams 80}}"
         caddy.tls.issuer: "acme"
         caddy.tls.issuer.email: "larraz92@gmail.com"
-        caddy.tls.issuer.ca: "https://acme-v02.api.letsencrypt.org/directory"
+        caddy.tls.issuer.dir: "https://acme-v02.api.letsencrypt.org/directory"
 
 volumes:
   web-content:
