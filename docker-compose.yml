@@ -51,7 +51,8 @@ services:
         caddy: freelancecalc.net, www.freelancecalc.net
         caddy.reverse_proxy: "{{upstreams 80}}"
         caddy.tls.issuer: "acme"
-        caddy.tls.issuer.challenges: "http-01 tls-alpn-01"
+        caddy.tls.issuer.email: "larraz92@gmail.com"
+        caddy.tls.issuer.ca: "https://acme-v02.api.letsencrypt.org/directory"
 
 volumes:
   web-content:
