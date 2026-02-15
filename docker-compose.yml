@@ -50,8 +50,8 @@ services:
       labels:
         caddy: freelancecalc.net, www.freelancecalc.net
         caddy.reverse_proxy: "{{upstreams 80}}"
-        caddy.tls.issuer: "acme"
-        caddy.tls.issuer.email: "larraz92@gmail.com"
+    #    caddy.tls.issuer: "acme"
+    #    caddy.tls.issuer.email: "larraz92@gmail.com"
     #    caddy.tls.issuer.dir: "https://acme-v02.api.letsencrypt.org/directory"
     #    caddy.tls.issuer.challenges.http.disabled: "false"
     #    caddy.tls.issuer.challenges.dns.disabled: "true"
