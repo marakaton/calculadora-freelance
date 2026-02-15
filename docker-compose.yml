@@ -50,7 +50,8 @@ services:
       labels:
         caddy: freelancecalc.net, www.freelancecalc.net
         caddy.reverse_proxy: "{{upstreams 80}}"
-        caddy.tls.ca: "https://acme-v02.api.letsencrypt.org/directory"
+        caddy.tls.issuer: "acme"
+        caddy.tls.issuer.challenges: "http-01 tls-alpn-01"
 
 volumes:
   web-content:
